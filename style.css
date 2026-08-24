@@ -1,0 +1,190 @@
+/* ---------------------------------------------------------
+   Lu Liu — portfolio
+   Edit the tokens in :root to restyle the whole site.
+--------------------------------------------------------- */
+
+:root {
+  --bg:        #fbfaf8;
+  --surface:   #ffffff;
+  --ink:       #16150f;
+  --ink-soft:  #55524a;
+  --ink-faint: #8a867c;
+  --rule:      #e3e0d8;
+  --accent:    #9a5b2e;
+  --accent-bg: #f3ece4;
+
+  --max: 1080px;
+  --gap: clamp(3rem, 7vw, 6rem);
+
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #14140f;
+    --surface:   #1c1c16;
+    --ink:       #f0eee7;
+    --ink-soft:  #b3afa4;
+    --ink-faint: #7d7a70;
+    --rule:      #33322a;
+    --accent:    #d99b62;
+    --accent-bg: #26231c;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern", "liga";
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-inline: clamp(1.25rem, 5vw, 2.5rem); }
+.narrow { max-width: 660px; }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-in {
+  max-width: var(--max); margin: 0 auto;
+  padding: 0.9rem clamp(1.25rem, 5vw, 2.5rem);
+  display: flex; align-items: baseline; gap: 1.5rem;
+}
+.nav-name { font-weight: 650; letter-spacing: -0.02em; color: var(--ink); }
+.nav-name:hover { text-decoration: none; }
+.nav-links { margin-left: auto; display: flex; gap: 1.4rem; font-size: 0.9rem; }
+.nav-links a { color: var(--ink-soft); }
+.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--ink); }
+
+/* ---------- type ---------- */
+h1, h2, h3 { line-height: 1.15; letter-spacing: -0.025em; font-weight: 640; margin: 0; }
+h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); }
+h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); }
+h3 { font-size: 1.12rem; letter-spacing: -0.015em; }
+
+.eyebrow {
+  font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint); font-weight: 600; margin: 0 0 0.9rem;
+}
+
+.lede { font-size: clamp(1.1rem, 2.2vw, 1.32rem); line-height: 1.55; color: var(--ink-soft); }
+
+p { margin: 0 0 1.15em; }
+.muted { color: var(--ink-soft); }
+.small { font-size: 0.9rem; }
+
+section { padding-block: var(--gap); }
+section + section { border-top: 1px solid var(--rule); }
+
+/* ---------- hero ---------- */
+.hero { padding-block: clamp(4rem, 11vw, 8rem) var(--gap); }
+.hero h1 { max-width: 19ch; }
+.hero .lede { max-width: 52ch; margin-top: 1.6rem; }
+
+.meta-row {
+  display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem;
+  margin-top: 2.2rem; font-size: 0.9rem; color: var(--ink-faint);
+}
+
+/* ---------- work cards ---------- */
+.work-list { display: grid; gap: 2.5rem; margin-top: 2.5rem; }
+
+.card {
+  display: grid; grid-template-columns: 1fr; gap: 1.4rem;
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: 14px; overflow: hidden;
+  transition: border-color .18s ease, transform .18s ease;
+}
+.card:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--rule)); }
+@media (min-width: 760px) {
+  .card { grid-template-columns: 1.05fr 1fr; align-items: stretch; gap: 0; }
+}
+.card-media { background: var(--accent-bg); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+.card-media img { border-radius: 6px; }
+.card-body { padding: clamp(1.5rem, 3vw, 2.2rem); display: flex; flex-direction: column; }
+.card-body h3 { margin-bottom: 0.5rem; }
+.card-body .tags { margin-top: auto; padding-top: 1.2rem; }
+
+.card.stub { opacity: 0.72; }
+.card.stub .card-media { background: var(--rule); min-height: 140px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.tag {
+  font-size: 0.74rem; letter-spacing: 0.04em; padding: 0.25rem 0.6rem;
+  border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-faint);
+}
+
+/* ---------- case study ---------- */
+.case-head { padding-block: clamp(3rem, 8vw, 5.5rem) 2.5rem; }
+.case-head h1 { max-width: 20ch; }
+.case-facts {
+  display: grid; gap: 1.2rem 2.5rem; margin-top: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding-top: 1.8rem; border-top: 1px solid var(--rule);
+}
+.case-facts dt { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; margin-bottom: 0.3rem; }
+.case-facts dd { margin: 0; font-size: 0.95rem; }
+
+.case-body {
+  display: grid;
+  grid-template-columns: 1fr min(660px, 100%) 1fr;
+}
+.case-body > * { grid-column: 2; }
+.case-body > figure.wide { grid-column: 1 / -1; }
+.case-body h2 { margin: 3.2rem 0 1rem; }
+.case-body h3 { margin: 2.2rem 0 0.6rem; }
+.case-body ul { padding-left: 1.15rem; margin: 0 0 1.15em; }
+.case-body li { margin-bottom: 0.5em; }
+
+figure { margin: 2.8rem 0; }
+
+figure img { border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); }
+figcaption { margin-top: 0.7rem; font-size: 0.85rem; color: var(--ink-faint); line-height: 1.5; }
+
+blockquote {
+  margin: 2.2rem 0; padding: 1.3rem 1.5rem;
+  background: var(--accent-bg); border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+/* ---------- publications ---------- */
+.pubs { margin-top: 2.5rem; display: grid; gap: 0; }
+.pub { padding: 1.5rem 0; border-top: 1px solid var(--rule); display: grid; gap: 0.35rem; }
+.pub:last-child { border-bottom: 1px solid var(--rule); }
+.pub-title { font-weight: 600; color: var(--ink); }
+.pub-venue { font-size: 0.9rem; color: var(--ink-soft); }
+.pub-note { font-size: 0.85rem; color: var(--ink-faint); }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--rule); padding-block: 3rem 4rem; font-size: 0.9rem; color: var(--ink-faint); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-bottom: 1.2rem; }
+.foot-links a { color: var(--ink); }
+
+/* ---------- utility ---------- */
+.btn {
+  display: inline-block; padding: 0.6rem 1.15rem; border: 1px solid var(--ink);
+  border-radius: 999px; color: var(--ink); font-size: 0.92rem; font-weight: 500;
+}
+.btn:hover { background: var(--ink); color: var(--bg); text-decoration: none; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--surface); padding: 0.6rem 1rem; z-index: 50; border-radius: 6px; }
