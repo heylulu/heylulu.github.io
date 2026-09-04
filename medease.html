@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MedEase — Lu Liu</title>
+<meta name="description" content="A low-cost pill box and packaging system for personal medication management: packaging, visual information design, product model, app concept and a working prototype.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-name" href="index.html">Lu Liu</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="publications.html">Publications</a>
+      <a href="files/cv.pdf">CV</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="case-head wrap">
+  <p class="eyebrow">Case study</p>
+  <h1>MedEase</h1>
+  <p class="lede">
+    A low-cost pill box and a packaging system to go with it, designed to make taking
+    medication at the right time the easy thing to do rather than the disciplined thing.
+  </p>
+
+  <dl class="case-facts">
+    <div><dt>Role</dt><dd>Sole designer; concept later developed by a team</dd></div>
+    <div><dt>Context</dt><dd>Personal project, Shanghai Jiao Tong University</dd></div>
+    <div><dt>Built with</dt><dd>Arduino, Processing</dd></div>
+    <div><dt>Output</dt><dd>Packaging system, information design, product model, app concept, working prototype</dd></div>
+  </dl>
+</header>
+
+<div class="wrap">
+<article class="case-body">
+
+  <h2>The problem</h2>
+  <p>
+    Medication compliance is a stubborn public health problem. When people do not take
+    their medicine as directed, the treatment underperforms and the money spent on it is
+    wasted. The failure is rarely a refusal — it is a scatter of small everyday frictions,
+    and those are designable.
+  </p>
+
+  <h2>What "on time" actually means</h2>
+
+  <figure class="diagram">
+    <img src="img/medease/concentration-time_curve.jpg" alt="A simplified plasma concentration-time curve after a single oral dose, rising to a peak and decaying, with the effective range marked.">
+    <figcaption>Plasma concentration after a single oral dose, simplified.</figcaption>
+  </figure>
+
+  <p>
+    Everything in this project follows from one graph. After an oral dose, the drug's
+    concentration in the blood rises, peaks, and decays; it is useful only while it sits
+    inside a certain range. Reading that curve for different dosing intervals shows what
+    keeps concentration in range and what does not.
+  </p>
+
+  <div class="grid2">
+    <figure class="diagram">
+      <img src="img/medease/on_time_curve.jpg" alt="Overlapping concentration curves at stable intervals, keeping the level inside the effective range.">
+      <figcaption>Stable intervals: concentration stays in range.</figcaption>
+    </figure>
+    <figure class="diagram">
+      <img src="img/medease/not_on_time_curve.jpg" alt="Overlapping concentration curves at irregular intervals, with the level dropping below or climbing above the effective range.">
+      <figcaption>Irregular intervals: it does not.</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    So taking medicine on time is not taking it at the same clock time every day — it is
+    keeping a <strong>stable interval between doses</strong>. That distinction is invisible
+    on most packaging, and it is the principle the whole product is built on.
+  </p>
+
+  <h2>Where it goes wrong</h2>
+
+  <figure class="diagram">
+    <img src="img/medease/problems.jpg" alt="Illustration of the everyday problems with managing medication.">
+  </figure>
+
+  <p><strong>It is inconvenient.</strong> The instructions on a medicine box are hard to
+    find and written for clinicians. Holding the dosages of several different medicines in
+    your head at once is genuinely difficult.</p>
+  <p><strong>People forget.</strong> They forget the dose, they forget where they put the
+    box, they forget to refill it, and they forget to pack it when they travel. Refilling
+    costs a trip and a wait.</p>
+  <p><strong>Motivation runs out.</strong> Some people have not forgotten at all. Taking a
+    pill is a daily reminder of being a patient, and when the medicine is preventive its
+    benefit is invisible, so the habit quietly lapses.</p>
+
+  <h2>Who it is for</h2>
+
+  <div class="grid3">
+    <figure>
+      <img class="round" src="img/medease/elderly.jpg" alt="An older person.">
+      <figcaption><strong>Older adults</strong>, who often take several medicines a day and prefer devices that are simple to operate.</figcaption>
+    </figure>
+    <figure>
+      <img class="round" src="img/medease/chronic_disease.jpg" alt="A person of working age.">
+      <figcaption><strong>People with a chronic condition</strong>, at any age, taking medication on a schedule long-term.</figcaption>
+    </figure>
+    <figure>
+      <img class="round" src="img/medease/other_potential.jpg" alt="A younger person.">
+      <figcaption><strong>Everyday regular users</strong> — daily supplements, and medicines that only work if taken on schedule.</figcaption>
+    </figure>
+  </div>
+
+  <h2>From goals to a system</h2>
+
+  <figure class="wide">
+    <img src="img/medease/brainstorming.jpg" alt="Brainstorming board of concepts for medication management.">
+  </figure>
+
+  <p>Three goals came out of the research — simplify the management, make the information
+    visual instead of textual, and give people a reason to keep going — and each mapped to
+    a decision:</p>
+  <ul>
+    <li><strong>Sort by dose, not by drug.</strong> The pharmacy pre-sorts everything a
+      person takes at one moment into a single sachet, following the model
+      <a href="https://www.pillpack.com/">PillPack</a> uses. Nothing is left for the
+      patient to assemble.</li>
+    <li><strong>Redesign the packaging and what is printed on it</strong>, so the necessary
+      information can be read at a glance.</li>
+    <li><strong>Remind at the right moment</strong>, physically as well as on a phone.</li>
+    <li><strong>Keep a record</strong>, so the person — and, if they want, a clinician or a
+      carer — can see what actually happened.</li>
+  </ul>
+
+  <h2>Packaging</h2>
+  <p>I worked through four packaging routes before settling on one.</p>
+
+  <div class="grid4">
+    <figure>
+      <img src="img/medease/one_pack_design.jpg" alt="Packaging option one: an individual pack holding one dose.">
+      <figcaption>I. One pack per dose</figcaption>
+    </figure>
+    <figure>
+      <img src="img/medease/presorted_design.jpg" alt="Packaging option two: packs pre-sorted by time and date.">
+      <figcaption>II. Pre-sorted by time and date</figcaption>
+    </figure>
+    <figure>
+      <img src="img/medease/packed_dosage_design.jpg" alt="Packaging option three: a strip packed by dosage for a period.">
+      <figcaption>III. Packed by dosage for a period</figcaption>
+    </figure>
+    <figure>
+      <img src="img/medease/uniform_package_design.jpg" alt="Packaging option four: a uniform standard package.">
+      <figcaption>IV. Uniform package</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    The uniform package is what the rest of the system stands on. One standard sachet that
+    a pharmacy can fill and a machine can handle turns a mechanical problem into a
+    tractable one, and it means the box does not have to know anything about the shape of
+    the pills inside it.
+  </p>
+
+  <h2>What is printed on the pack</h2>
+
+  <div class="grid2">
+    <figure>
+      <img src="img/medease/visual_one_pack.jpg" alt="A single sachet showing name, date, time icon, pill images and dosage.">
+    </figure>
+    <figure class="diagram">
+      <img src="img/medease/time_icons.jpg" alt="Four time-of-day icons: morning, midday, evening and night.">
+      <figcaption>Four times of day, as icons rather than clock times.</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    Each sachet carries the name, date, time, pills and dosage. Time is one of four icons
+    rather than a printed hour, because people's days differ: printing "8:00" is wrong for
+    anyone whose morning starts later and misleading for everyone else, when what the
+    medicine needs is a consistent gap rather than a particular hour.
+  </p>
+  <p>
+    The pills themselves are shown as pictures. Unlike a conventional medicine box, you do
+    not have to read anything to know what you are holding.
+  </p>
+
+  <div class="grid3">
+    <figure><img src="img/medease/box_front.jpg" alt="Front of the redesigned medicine packaging."></figure>
+    <figure><img src="img/medease/box_back.jpg" alt="Back of the redesigned medicine packaging."></figure>
+    <figure><img src="img/medease/box_demo.jpg" alt="The assembled packaging held in a hand."></figure>
+  </div>
+
+  <figure class="wide diagram">
+    <img src="img/medease/box_expand.jpg" alt="Flat expanded drawing of the packaging with dimensions and fold lines.">
+    <figcaption>Packaging drawing.</figcaption>
+  </figure>
+
+  <h2>The system around the box</h2>
+
+  <figure class="wide diagram">
+    <img src="img/medease/system.jpg" alt="System diagram: prescription and pharmacy on the clinical side, uniform packaging in the middle, e-pillbox and phone app on the home side.">
+  </figure>
+
+  <p>The device is one part of a chain that starts at the prescription:</p>
+
+  <div class="grid3">
+    <figure><img src="img/medease/storyboard_1.jpg" alt="Storyboard: medicine pre-sorted at the pharmacy."></figure>
+    <figure><img src="img/medease/storyboard_2.jpg" alt="Storyboard: the packs are loaded into the MedEase box at home."></figure>
+    <figure><img src="img/medease/storyboard_3.jpg" alt="Storyboard: the box reads the identity and schedule from the packaging."></figure>
+    <figure><img src="img/medease/storyboard_4.jpg" alt="Storyboard: at dose time a pack rises out of the box."></figure>
+    <figure><img src="img/medease/storyboard_5.jpg" alt="Storyboard: the box signals with light and sound."></figure>
+    <figure><img src="img/medease/storyboard_6.jpg" alt="Storyboard: the record syncs to a phone and watch."></figure>
+  </div>
+
+  <ol>
+    <li>The pharmacy pre-sorts the prescription into uniform packs; the schedule travels
+      with them on an RFID tag.</li>
+    <li>The packs go into the box, which checks identity and reads the schedule.</li>
+    <li>At dose time one pack moves up on its own, with a light and an alarm.</li>
+    <li>The record syncs over Wi-Fi or Bluetooth to a phone or watch, where a clinician or
+      carer can see it if the person wants them to.</li>
+  </ol>
+
+  <h2>Product and app</h2>
+
+  <figure class="wide">
+    <img src="img/medease/sketch.jpg" alt="Ideation sketches of the pill box form and internal mechanism.">
+  </figure>
+
+  <div class="grid2">
+    <figure><img src="img/medease/model_1.jpg" alt="Product model of the MedEase box, front three-quarter view."></figure>
+    <figure><img src="img/medease/model_2.jpg" alt="Product model of the MedEase box, alternate view."></figure>
+  </div>
+
+  <div class="grid2">
+    <figure><img src="img/medease/app_1.jpg" alt="Screens from the companion app: schedule, reminder and medicine information."></figure>
+    <figure>
+      <img src="img/medease/workflow.jpg" alt="Workflow diagram of the app, from reading the box to recording a dose.">
+      <figcaption>App workflow.</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    The app carries four things: the schedule, the record of what was taken, the timed
+    reminder, and the information about each medicine — the same content as the sachet,
+    kept somewhere you can look it up.
+  </p>
+
+  <h2>Prototype</h2>
+
+  <div class="grid2">
+    <figure class="diagram">
+      <img src="img/medease/flowchart.jpg" alt="Flowchart of the prototype logic, from reading the schedule to dispensing and recording.">
+      <figcaption>Logic.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/medease/circuit.jpg" alt="Circuit diagram of the prototype built with Arduino.">
+      <figcaption>Circuit, built with Arduino and Processing.</figcaption>
+    </figure>
+  </div>
+
+  <figure class="wide">
+    <video controls preload="metadata" poster="img/medease/prototype_poster.jpg" playsinline>
+      <source src="img/video/medease-prototype.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <figcaption>The working prototype: a pack is advanced at dose time, with light and alarm.</figcaption>
+  </figure>
+
+  <div class="grid3">
+    <figure><img src="img/medease/prototype_1.jpg" alt="The working prototype, exterior."></figure>
+    <figure><img src="img/medease/prototype_2.jpg" alt="The working prototype with the packs loaded."></figure>
+    <figure><img src="img/medease/prototype_3.jpg" alt="The working prototype's internal mechanism."></figure>
+  </div>
+
+  <figure class="wide">
+    <video controls preload="metadata" playsinline>
+      <source src="img/video/medease-circuit.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <figcaption>Circuit demonstration.</figcaption>
+  </figure>
+
+  <h2>Where it went next</h2>
+  <p>
+    The team at the SJTU Interaction Design Lab carried the concept further. They kept the
+    core idea — uniform packaging, sorted by dose, with the schedule travelling on the pack
+    — and replaced the mechanical feed with a non-mechanical solution, putting more work
+    into the structure and moving the interface onto an e-ink screen.
+  </p>
+
+  <p class="next-case">
+    <a href="icerehab.html">Next case study: IceRehab →</a>
+  </p>
+
+</article>
+</div>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-links">
+    <a href="index.html#work">Work</a>
+    <a href="publications.html">Publications</a>
+    <a href="mailto:luluwhat12@gmail.com">Email</a>
+  </div>
+  <p>© 2026 Lu Liu</p>
+</footer>
+
+</body>
+</html>

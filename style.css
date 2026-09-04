@@ -225,3 +225,63 @@ footer { border-top: 1px solid var(--rule); padding-block: 3rem 4rem; font-size:
 
 .skip { position: absolute; left: -9999px; }
 .skip:focus { left: 1rem; top: 1rem; background: var(--surface); padding: 0.6rem 1rem; z-index: 50; border-radius: 6px; }
+
+/* ---------- image grids ---------- */
+.grid2, .grid3, .grid4 { display: grid; gap: 1rem; margin: 2.8rem 0; align-items: start; }
+.grid2 { grid-template-columns: 1fr; }
+.grid3, .grid4 { grid-template-columns: 1fr 1fr; }
+@media (min-width: 620px) { .grid2 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 720px) {
+  .grid3 { grid-template-columns: repeat(3, 1fr); }
+  .grid4 { grid-template-columns: repeat(4, 1fr); }
+}
+.grid2 > figure, .grid3 > figure, .grid4 > figure { margin: 0; }
+.grid2 img, .grid3 img, .grid4 img { width: 100%; }
+
+/* uniform-height row: letterbox mixed aspect ratios so captions line up */
+.grid-even .shot > a, .grid-even > figure > img { height: clamp(220px, 26vw, 360px); }
+.grid-even .shot > a { display: flex; align-items: center; justify-content: center; }
+.grid-even img { width: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
+.case-body .grid2, .case-body .grid3, .case-body .grid4 { grid-column: 1 / -1; }
+
+img.round { border-radius: 999px; aspect-ratio: 1; object-fit: cover; }
+
+/* ---------- video ---------- */
+video { width: 100%; height: auto; display: block; border-radius: 8px; background: #000; }
+
+.next-case {
+  margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--rule);
+  font-weight: 500;
+}
+
+/* ---------- screenshot plates (design work) ---------- */
+.shot { margin: 0; }
+.shot > a, .shot > .plate {
+  display: block; position: relative; overflow: hidden;
+  border: 1px solid var(--rule); border-radius: 10px; background: #fff;
+}
+.shot > a:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--rule)); text-decoration: none; }
+.shot.tall > a { max-height: 480px; }
+.shot.tall > a::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 88px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+  pointer-events: none;
+}
+.shot img { border-radius: 0; }
+.shot figcaption { margin-top: 0.55rem; }
+.shot-note { font-size: 0.8rem; color: var(--ink-faint); margin-top: 0.35rem; }
+
+/* ---------- design-work page ---------- */
+.proj { padding-block: var(--gap); }
+.proj + .proj { border-top: 1px solid var(--rule); }
+.proj-head { max-width: 660px; margin-bottom: 2.2rem; }
+.proj-head h2 { margin-bottom: 0.8rem; }
+.proj-head .tags { margin-top: 1.2rem; }
+.proj-kind {
+  font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin: 0 0 0.7rem;
+}
+.marks { display: grid; gap: 1.4rem; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin: 2.4rem 0 0; }
+.marks figure { margin: 0; }
+.marks img { background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 1.4rem;
+  height: clamp(150px, 18vw, 210px); width: 100%; object-fit: contain; }

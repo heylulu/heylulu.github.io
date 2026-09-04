@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IceRehab — Lu Liu</title>
+<meta name="description" content="A balance-training game for ankle rehabilitation, controlled by shifting weight on a pressure pad: game model, working prototype, and a one-week trial with two patients.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-name" href="index.html">Lu Liu</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="publications.html">Publications</a>
+      <a href="files/cv.pdf">CV</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="case-head wrap">
+  <p class="eyebrow">Case study</p>
+  <h1>IceRehab</h1>
+  <p class="lede">
+    A balance-training game for people recovering from an ankle sprain, controlled
+    by shifting your weight on a pressure pad.
+  </p>
+
+  <dl class="case-facts">
+    <div><dt>Role</dt><dd>Sole designer and researcher</dd></div>
+    <div><dt>Context</dt><dd>Master's thesis, Shanghai Jiao Tong University</dd></div>
+    <div><dt>Built with</dt><dd>Sensel Morph pressure pad, desktop game interface</dd></div>
+    <div><dt>Output</dt><dd>Game model, working prototype, one-week trial with two patients</dd></div>
+  </dl>
+</header>
+
+<div class="wrap">
+<article class="case-body">
+
+  <figure class="wide">
+    <video controls preload="metadata" poster="img/icerehab/intro_poster.jpg" playsinline>
+      <source src="img/video/icerehab-intro.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <figcaption>Project introduction, 1:18.</figcaption>
+  </figure>
+
+  <h2>The problem</h2>
+  <p>
+    An ankle sprain is one of the most common injuries there is, and most people recover
+    from one without surgery. What they need instead is rehabilitation exercise — and that
+    is where the treatment tends to fall apart. Clinicians prescribe the exercises,
+    patients find them dull, and they stop doing them. Immobilizing the joint for too long
+    is a common treatment error, and skipped exercise leads to lasting pain, swelling, and
+    in some cases chronic ankle instability.
+  </p>
+  <p>
+    The medical side of this is well understood. The behavioral side is not: the exercises
+    work, people just do not do them. That gap was the project.
+  </p>
+
+  <figure class="diagram">
+    <img src="img/icerehab/ankle_sprain.jpg" alt="Illustration of an ankle sprain: the ligaments on the outside of the ankle overstretched.">
+  </figure>
+
+  <h2>What the exercise actually is</h2>
+  <p>
+    Rehabilitation after an acute sprain runs in three stages, and clinicians have mature
+    training templates for each.
+  </p>
+
+  <div class="grid3">
+    <figure class="diagram">
+      <img src="img/icerehab/ankle_rehab_stage1.jpg" alt="Illustration of early functional rehabilitation exercises for the ankle.">
+      <figcaption><strong>Stage I</strong><br>Early functional rehabilitation</figcaption>
+    </figure>
+    <figure class="diagram">
+      <img src="img/icerehab/ankle_rehab_stage2.jpg" alt="Illustration of intermediate functional rehabilitation: balance work on an unstable surface.">
+      <figcaption><strong>Stage II</strong><br>Intermediate functional rehabilitation</figcaption>
+    </figure>
+    <figure class="diagram">
+      <img src="img/icerehab/ankle_rehab_stage3.jpg" alt="Illustration of advanced functional rehabilitation exercises for the ankle.">
+      <figcaption><strong>Stage III</strong><br>Advanced functional rehabilitation</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    I took the second one: proprioceptive training in intermediate functional
+    rehabilitation. The standard exercise is a two-legged and then one-legged stance on a
+    circular wobble board, five to ten repetitions per session, two or three sessions a
+    day. That structure — fixed repetitions, fixed frequency, a performance you can
+    measure continuously — maps onto game rounds and goals almost directly, which is why
+    this stage is the one worth designing for.
+  </p>
+  <p class="small muted">
+    Stage model after Mattacola, C. G. &amp; Dwyer, M. K. (2002). Rehabilitation of the
+    ankle after acute sprain or chronic instability. <em>Journal of Athletic Training</em>,
+    37(4), 413.
+  </p>
+
+  <h2>Two things wrong with the standard exercise</h2>
+
+  <figure class="wide diagram">
+    <img src="img/icerehab/ankle_rehab_issues.jpg" alt="Diagram of a person standing on one leg, annotated with two problems: boring to keep on, and lack of interference and variability.">
+  </figure>
+
+  <p>
+    The first is motivational: standing still on a board is monotonous, so people do not
+    complete the prescribed amount, and the amount is what makes it work.
+  </p>
+  <p>
+    The second is clinical. Proprioceptive training prepares the joint for slow and
+    moderately rapid movement, but it does not challenge the neuromuscular system at the
+    level that real perturbation does — a curb, a crowded platform, someone knocking into
+    you. A quiet stance rehearses stability; it does not rehearse recovery.
+  </p>
+  <p>
+    So the design had two jobs: make the training something a person will finish, and put
+    unpredictability into it without making it unsafe.
+  </p>
+
+  <h2>The game model</h2>
+
+  <figure class="wide diagram">
+    <img src="img/icerehab/game_model.jpg" alt="Game model diagram: the score formula, awards falling in a line that the player collects by staying still, and interferents entering from the side that the player must dodge by shifting their pressure center.">
+  </figure>
+
+  <p>
+    Staying still is the goal state. While the player keeps their balance, the pressure
+    center stays put, the character holds its position, and a line of awards runs down the
+    screen into it — steady balance is paid immediately and visibly, which is what the
+    exercise itself never does.
+  </p>
+  <p>
+    Interferents enter from the left or right at random and cost score on contact, so the
+    player has to move out of the way. The character travels in one dimension only, left
+    and right, because the person doing it is standing on one injured leg and should not
+    be decoding a complicated control scheme. The body doing the moving is not
+    one-dimensional though: shifting your center of gravity while balancing on one foot
+    puts the ankle through a range of angles and postures. Simple on screen, varied at the
+    joint.
+  </p>
+
+  <h2>Progression</h2>
+
+  <figure class="wide diagram">
+    <img src="img/icerehab/progression_path.jpg" alt="Progression diagram: a clinician sets the training plan and reads training data, while the game levels up or down with the player's score by making interferents more frequent and faster and rounds longer.">
+  </figure>
+
+  <p>
+    Difficulty has to climb as the ankle recovers, or the game stops being training and
+    starts being a pastime. Three variables carry it: how often interferents appear, how
+    fast they travel, and how long a round lasts. Level goes up when scores go up and back
+    down when they do not, so the demand tracks the person rather than the calendar.
+  </p>
+  <p>
+    Clinicians set the starting plan and can read the training log afterwards. That log is
+    a more reliable account of what a patient did than asking them.
+  </p>
+
+  <h2>Hardware</h2>
+
+  <div class="grid2">
+    <figure>
+      <img src="img/icerehab/hardware.jpg" alt="The two hardware parts of the system: a multi-touch pressure sensor pad and a laptop.">
+    </figure>
+    <figure>
+      <img src="img/icerehab/input_2.jpg" alt="A foot standing on the multi-touch pressure pad, with the pressure distribution visualized.">
+      <figcaption><strong>Input.</strong> The pad reports pressure distribution; the game reads the pressure center.</figcaption>
+    </figure>
+  </div>
+
+  <p>
+    To keep the build simple I used a <a href="https://sensel.com/">Sensel Morph</a> as the
+    input: a multi-touch pressure pad that reports the distribution of force under the
+    foot. That is enough to tell whether someone is standing in the right posture and
+    where their pressure center is. Output is an ordinary laptop or desktop screen. Both
+    halves are things a household either already owns or can buy once, which matters for
+    something meant to be used at home rather than in a clinic.
+  </p>
+
+  <h2>The interface</h2>
+  <p>
+    Ice skating gave the game its setting. It is itself a balance activity, so the rules
+    need no explaining, and the story and characters give the training something to be
+    about. The interface runs in four stages: introduction and task table, initialization
+    and countdown, the game, and results.
+  </p>
+
+  <figure class="wide">
+    <video controls preload="metadata" poster="img/icerehab/thumbnail.jpg" playsinline>
+      <source src="img/video/icerehab-ui.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+    <figcaption>Walkthrough of the game interface, from task table to results.</figcaption>
+  </figure>
+
+  <h2>Trying it out</h2>
+
+  <figure class="wide">
+    <img src="img/icerehab/user_test.jpg" alt="Photographs from the one-week trial: a participant standing on the pressure pad in front of a screen running the game.">
+  </figure>
+
+  <p>
+    Two people recovering from ankle sprains used the system for a week. I explained the
+    daily task but did not make it compulsory, because the question was whether they would
+    keep going, not whether they would comply. Both completed every session and improved
+    over the week.
+  </p>
+  <p>
+    Two participants over one week is a first indication and not much more. It says the
+    format is not off-putting and that people will return to it unprompted. It does not
+    say the training is more effective than a wobble board — that needs a controlled
+    comparison against the standard exercise, a larger group, and a clinical balance
+    measure rather than a game score.
+  </p>
+
+  <h2>Write-up</h2>
+  <p>
+    The project is written up in
+    <a href="files/ankle-rehabilitation-2018.pdf">An Interactive Training System Design for
+    Ankle Rehabilitation</a> (Liu, Dong &amp; Tang, 2018).
+  </p>
+
+  <p class="next-case">
+    <a href="medease.html">Next case study: MedEase →</a>
+  </p>
+
+</article>
+</div>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-links">
+    <a href="index.html#work">Work</a>
+    <a href="publications.html">Publications</a>
+    <a href="mailto:luluwhat12@gmail.com">Email</a>
+  </div>
+  <p>© 2026 Lu Liu</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interface &amp; visual design — Lu Liu</title>
+<meta name="description" content="Selected interface, web and visual design work: operational dashboards, mobile tools, e-commerce and corporate sites, identity and print.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="nav-name" href="index.html">Lu Liu</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="publications.html">Publications</a>
+      <a href="files/cv.pdf">CV</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="case-head wrap">
+  <p class="eyebrow">Selected work</p>
+  <h1>Interface &amp; visual design</h1>
+  <p class="lede">
+    Design work from before the PhD, and alongside it: operational dashboards, mobile
+    tools, e-commerce and corporate sites, identity and print. Dense data at one end,
+    brand at the other.
+  </p>
+</header>
+
+<!-- TODO Lu: add client / employer / year to each block where you want it named.
+     Nothing below claims a client, a role or a date. -->
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Product UI · Web application</p>
+    <h2>Sensor monitoring console</h2>
+    <p class="muted">
+      A console for a building sensor network — smoke, PM2.5, temperature, humidity and
+      combined units across many sites. The home view answers the only question an
+      operator has on opening it: what is wrong and where. Counts by sensor type across
+      the top, a map with the sites plotted, connection status per type as a ratio rather
+      than a percentage, and today's alarms as a list you can read without clicking.
+    </p>
+    <p class="muted">
+      Behind it sits the unglamorous half: device, customer, user and user-group
+      management, and an alert-rule editor, all built on one table-and-form pattern so
+      that learning one screen teaches you the rest.
+    </p>
+    <div class="tags">
+      <span class="tag">Dashboard</span>
+      <span class="tag">Data density</span>
+      <span class="tag">Admin flows</span>
+      <span class="tag">IoT</span>
+    </div>
+  </div>
+
+  <figure class="shot">
+    <a href="img/uiux/iot-dashboard.jpg" target="_blank" rel="noopener">
+      <img src="img/uiux/iot-dashboard.jpg" alt="Monitoring dashboard: colored counts for five sensor types, a map of device locations, connection-status rings, an alarm log and a device list.">
+    </a>
+    <figcaption>Operator home view.</figcaption>
+  </figure>
+
+  <div class="grid2">
+    <figure class="shot">
+      <a href="img/uiux/iot-devices.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/iot-devices.jpg" alt="Device list screen with filters and per-device status.">
+      </a>
+      <figcaption>Device list.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/iot-alarms.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/iot-alarms.jpg" alt="Alarm records screen with time, content, severity and type columns.">
+      </a>
+      <figcaption>Alarm records.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/iot-rules.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/iot-rules.jpg" alt="Alert rule editor with threshold and notification settings.">
+      </a>
+      <figcaption>Alert-rule editor.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/iot-mockup.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/iot-mockup.jpg" alt="The console shown on a desktop monitor in an office setting.">
+      </a>
+      <figcaption>In place.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Product UI · Mobile</p>
+    <h2>Dealer reporting app</h2>
+    <p class="muted">
+      A phone tool for car dealer staff and regional managers to file and read the numbers
+      that run a dealership: monthly retail forecasts by model, gross margin per vehicle,
+      competitor pricing, aged inventory, and point-of-sale material.
+    </p>
+    <p class="muted">
+      Almost every screen is either a table you read or a table you fill in, on a phone, by
+      someone who does it monthly and does not want to think about it. So the layout stays
+      the same throughout — model on the left, figure on the right, one primary action at
+      the bottom — and the design work went into the states around it: what an empty
+      period looks like, what an editable cell looks like next to a fixed one, and where
+      the warning goes when a number needs a caveat.
+    </p>
+    <div class="tags">
+      <span class="tag">Data entry</span>
+      <span class="tag">iOS</span>
+      <span class="tag">Wireframe to hi-fi</span>
+      <span class="tag">Enterprise</span>
+    </div>
+  </div>
+
+  <div class="grid3 grid-even">
+    <figure class="shot">
+      <a href="img/uiux/cad-forecast.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-forecast.jpg" alt="Phone screen: monthly retail forecast per car model with a total row.">
+      </a>
+      <figcaption>Retail forecast.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-margin.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-margin.jpg" alt="Phone screen: editable gross margin figures per model with a save button and an inline note.">
+      </a>
+      <figcaption>Margin entry, editing state.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-pricing.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-pricing.jpg" alt="Phone screen: competitor pricing grouped by brand and series, expanded.">
+      </a>
+      <figcaption>Competitor pricing.</figcaption>
+    </figure>
+  </div>
+
+  <div class="grid3">
+    <figure class="shot">
+      <a href="img/uiux/cad-wireframe.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-wireframe.jpg" alt="Greyscale wireframe of the app home screen.">
+      </a>
+      <figcaption>Wireframe.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-inventory.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-inventory.jpg" alt="Aged inventory module screens.">
+      </a>
+      <figcaption>Aged inventory.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-posm.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-posm.jpg" alt="Point-of-sale material module screens.">
+      </a>
+      <figcaption>Point-of-sale material.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Product UI · Voice interface</p>
+    <h2>Voice-controlled home screen</h2>
+    <p class="muted">
+      A screen for a voice assistant, where the display is the assistant's second channel
+      rather than its main one. Rooms sit on a ring around the microphone, scenes are
+      isometric places rather than lists of switches, and a waveform along the bottom edge
+      shows the system listening without a modal taking over the screen.
+    </p>
+    <div class="tags">
+      <span class="tag">Voice + screen</span>
+      <span class="tag">Smart home</span>
+      <span class="tag">Dark UI</span>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <figure class="shot">
+      <a href="img/uiux/voice-home.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/voice-home.jpg" alt="Dark voice assistant home screen: rooms arranged around a glowing ring, device shortcuts below, microphone and waveform at the bottom.">
+      </a>
+      <figcaption>Home.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/voice-modes.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/voice-modes.jpg" alt="Scene selection screen with isometric illustrations of a home and an office.">
+      </a>
+      <figcaption>Scenes.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Product UI · Mobile web</p>
+    <h2>Daily briefing subscription</h2>
+    <p class="muted">
+      A daily market briefing delivered as a mobile page: fundamentals, a forecast, and a
+      deeper data section, designed in a subscriber and a non-subscriber version so the
+      paywall is a change of state in one layout rather than a separate page. The free
+      version has to be genuinely readable and still make the case for the paid one.
+    </p>
+    <div class="tags">
+      <span class="tag">Mobile web</span>
+      <span class="tag">Charts</span>
+      <span class="tag">Subscription states</span>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <figure class="shot tall">
+      <a href="img/uiux/chain-member.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/chain-member.jpg" alt="Full-length mobile page: subscriber version of the daily briefing with fundamentals, forecast chart and analysis.">
+      </a>
+      <figcaption>Subscriber version.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/chain-free.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/chain-free.jpg" alt="Full-length mobile page: non-subscriber version with sections locked.">
+      </a>
+      <figcaption>Non-subscriber version.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/chain-article.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/chain-article.jpg" alt="Full-length mobile article page.">
+      </a>
+      <figcaption>Article page.</figcaption>
+    </figure>
+  </div>
+  <p class="shot-note">Full-length page designs — click any image to see the whole page.</p>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">E-commerce</p>
+    <h2>ilk London</h2>
+    <p class="muted">
+      A men's grooming shop built on a hard editorial grid: heavy condensed type, a lot of
+      white, one yellow that only ever means "buy". Product filtering is set as a row of
+      line icons — skin type, routine step, product type — so a browse can be narrowed
+      without opening a panel, and editorial blocks are cut into the product grid at
+      full width to break the catalogue rhythm.
+    </p>
+    <div class="tags">
+      <span class="tag">Web</span>
+      <span class="tag">Mobile</span>
+      <span class="tag">Editorial layout</span>
+      <span class="tag">Print</span>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <figure class="shot tall">
+      <a href="img/uiux/ilk-category.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/ilk-category.jpg" alt="Category page: brand header, filter icons, product grid with yellow buy buttons and an editorial block.">
+      </a>
+      <figcaption>Category page.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/ilk-product.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/ilk-product.jpg" alt="Product page with large product image and specification blocks.">
+      </a>
+      <figcaption>Product page.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/ilk-mobile.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/ilk-mobile.jpg" alt="The product page adapted to a phone screen.">
+      </a>
+      <figcaption>Mobile.</figcaption>
+    </figure>
+  </div>
+
+  <figure class="shot">
+    <a href="img/uiux/ilk-leaflet.jpg" target="_blank" rel="noopener">
+      <img src="img/uiux/ilk-leaflet.jpg" alt="Folded leaflet design carrying the same typographic system.">
+    </a>
+    <figcaption>Leaflet, on the same system.</figcaption>
+  </figure>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">E-commerce</p>
+    <h2>Yulan Home</h2>
+    <p class="muted">
+      A shop for wallpaper and home furnishing, where nobody arrives knowing the product
+      code they want. So the entry points are rooms — living room, dining room, bedroom,
+      study, nursery, entryway — and designer-curated schemes, with the SKU-level catalogue
+      kept behind a persistent category menu for the people who do know what they came for.
+    </p>
+    <div class="tags">
+      <span class="tag">Web</span>
+      <span class="tag">Retail</span>
+      <span class="tag">Catalogue structure</span>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <figure class="shot tall">
+      <a href="img/uiux/yulan-home.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/yulan-home.jpg" alt="Full-length home page: category menu, promotional banner, room-based browsing tiles and designer recommendations.">
+      </a>
+      <figcaption>Home page.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/yulan-b.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/yulan-b.jpg" alt="Full-length inner page from the same site.">
+      </a>
+      <figcaption>Inner page.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/yulan-c.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/yulan-c.jpg" alt="Full-length inner page from the same site.">
+      </a>
+      <figcaption>Inner page.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Corporate site</p>
+    <h2>Industrial group website</h2>
+    <p class="muted">
+      A corporate site for an oil-services and equipment group, with the problem most
+      corporate sites have: several audiences, one homepage. The structure separates them —
+      technology and services, group profile, R&amp;D, markets, recruitment — and a
+      diagram of the group's subsidiary structure does the work that three paragraphs of
+      company history usually fails to do. Designed for desktop and phone.
+    </p>
+    <div class="tags">
+      <span class="tag">Corporate web</span>
+      <span class="tag">Information architecture</span>
+      <span class="tag">Responsive</span>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <figure class="shot tall">
+      <a href="img/uiux/geojade-home.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/geojade-home.jpg" alt="Full-length corporate homepage: photographic hero, company profile, subsidiary structure diagram, and technology and services cards.">
+      </a>
+      <figcaption>Desktop home page.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/geojade-mobile.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/geojade-mobile.jpg" alt="Full-length mobile version of the corporate homepage.">
+      </a>
+      <figcaption>Mobile.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/geojade-framework.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/geojade-framework.jpg" alt="Site framework diagram showing the page structure.">
+      </a>
+      <figcaption>Site framework.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Brand</p>
+    <h2>Identity marks</h2>
+    <p class="muted">
+      Logos for small businesses and non-profits — a bakery, a charity travel program, a
+      charity shop, an elder-care service.
+    </p>
+  </div>
+
+  <div class="marks">
+    <figure>
+      <img src="img/uiux/id-bakery.jpg" alt="Circular bakery logo with a loaf of bread and a banner, in mint on dark navy.">
+    </figure>
+    <figure>
+      <img src="img/uiux/id-gyyy.jpg" alt="Gradient logo of layered feather forms in pink, green and blue.">
+    </figure>
+    <figure>
+      <img src="img/uiux/id-shanco.jpg" alt="Shopping bag mark with a red heart, set beside a wordmark.">
+    </figure>
+    <figure>
+      <img src="img/uiux/id-xiaoguo.jpg" alt="Logo combining a peach silhouette with a heart outline in orange and pink, above a wordmark.">
+    </figure>
+  </div>
+</section>
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Print &amp; campaign</p>
+    <h2>Posters and product graphics</h2>
+    <p class="muted">
+      Campaign posters for a summer program run across two years, a product presentation
+      board, and product marketing graphics.
+    </p>
+  </div>
+
+  <div class="grid4 grid-even">
+    <figure class="shot">
+      <a href="img/uiux/poster-camp-2015.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/poster-camp-2015.jpg" alt="Summer camp poster: flat night-time illustration of a tent and cabin under a moon.">
+      </a>
+      <figcaption>Summer camp, 2015.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/poster-camp-2016.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/poster-camp-2016.jpg" alt="Summer camp poster: flat illustration of a winding path through green hills to tents.">
+      </a>
+      <figcaption>Summer camp, 2016.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/poster-raindoms.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/poster-raindoms.jpg" alt="Presentation board for an umbrella whose ink-style pattern appears in the rain, with a photographic hero and three product views.">
+      </a>
+      <figcaption>Product presentation board.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/lenovo-vibe.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/lenovo-vibe.jpg" alt="Phone marketing graphics: four stacked panels each pairing a product shot with a short feature line.">
+      </a>
+      <figcaption>Product marketing graphics.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="narrow">
+    <p class="eyebrow">Contact</p>
+    <h2>Get in touch</h2>
+    <p class="lede">I am open to new work opportunities, including relocation.</p>
+    <div class="btn-row">
+      <a class="btn" href="mailto:luluwhat12@gmail.com">luluwhat12@gmail.com</a>
+      <a class="btn" href="files/cv.pdf">Download CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <div class="foot-links">
+    <a href="index.html#work">Work</a>
+    <a href="publications.html">Publications</a>
+    <a href="mailto:luluwhat12@gmail.com">Email</a>
+  </div>
+  <p>© 2026 Lu Liu</p>
+</footer>
+
+</body>
+</html>
