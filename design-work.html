@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Interface &amp; visual design — Lu Liu</title>
-<meta name="description" content="Selected interface, web and visual design work: operational dashboards, mobile tools, e-commerce and corporate sites, identity and print.">
+<meta name="description" content="Selected interface, web and visual design work: an enterprise dealer platform, operational dashboards, e-commerce and corporate sites, identity and print.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
@@ -32,14 +32,159 @@
   <p class="eyebrow">Selected work</p>
   <h1>Interface &amp; visual design</h1>
   <p class="lede">
-    Design work from before the PhD, and alongside it: operational dashboards, mobile
-    tools, e-commerce and corporate sites, identity and print. Dense data at one end,
-    brand at the other.
+    Design work from before the PhD, and alongside it: an enterprise platform for a dealer
+    network, operational dashboards, e-commerce and corporate sites, identity and print.
+    Dense data at one end, brand at the other.
   </p>
 </header>
 
 <!-- TODO Lu: add client / employer / year to each block where you want it named.
-     Nothing below claims a client, a role or a date. -->
+     Nothing below claims a role or a date; only Cadillac is named, from the screens. -->
+
+<section class="proj wrap">
+  <div class="proj-head">
+    <p class="proj-kind">Product UI · Web and mobile</p>
+    <h2>Cadillac dealer platform</h2>
+    <p class="muted">
+      A set of tools that head office and its dealers use on the same data: quarterly sales
+      targets, weekly and monthly reports, aged-inventory trading, showroom-material audits,
+      and dealer performance. Web for the desk work, phone for the work that happens standing
+      up in a showroom.
+    </p>
+    <p class="muted">
+      The structural problem is that head office and a dealer are looking at the same
+      numbers from opposite sides. Head office issues a target, verifies what comes back,
+      and confirms it; the dealer views it, submits against it, and keeps its own history.
+      Rather than build two products, the platform keeps one layout and swaps the tab strip
+      and the permissions — so the screen a regional manager talks a dealer through is
+      recognizably the screen the dealer is looking at.
+    </p>
+    <div class="tags">
+      <span class="tag">Enterprise platform</span>
+      <span class="tag">Role-based flows</span>
+      <span class="tag">Data density</span>
+      <span class="tag">Field audit tool</span>
+      <span class="tag">Web + mobile</span>
+    </div>
+  </div>
+
+  <h3 class="proj-sub">The web platform</h3>
+
+  <div class="grid2">
+    <figure class="shot">
+      <a href="img/uiux/cad-web-tasks.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-web-tasks.jpg" alt="Sales target module: a list of in-progress confirmation tasks with start and end dates above a searchable, paginated history.">
+      </a>
+      <figcaption>Target tasks, live above history.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-web-matrix.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-web-matrix.jpg" alt="Quarterly target table: dealer codes down the side, four car models across the top, each split into three months and a quarter total.">
+      </a>
+      <figcaption>Dealers &times; models &times; months, with quarter totals.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-web-verify.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-web-verify.jpg" alt="Verification step: region, staff and dealer filters above a single dealer's figures, with the full issuing history below.">
+      </a>
+      <figcaption>Verify one dealer, with the issuing history underneath.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-web-submit.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-web-submit.jpg" alt="Dealer-side submission: an attached target adjustment document ready to send, above a drop area for browsing another file.">
+      </a>
+      <figcaption>Dealer side: view, submit, history.</figcaption>
+    </figure>
+  </div>
+
+  <p class="muted narrow">
+    The target table is the screen everything else exists to serve. It has to hold four car
+    models against three months and a quarter total for every dealer in a region, stay
+    readable, and stay editable — so the visual weight goes almost entirely into the column
+    grouping, and nothing else on the page competes with it.
+  </p>
+
+  <h3 class="proj-sub">Showroom audits, on a phone</h3>
+
+  <div class="grid4 grid-even">
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-checklist.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-posm-checklist.jpg" alt="Audit checklist for one dealer, grouped into showroom, display cars and after-sales area, each with numbered items.">
+      </a>
+      <figcaption>Checklist, grouped by zone.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-scores.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-posm-scores.jpg" alt="Scores by dealer for a quarter, out of 100, with one dealer still marked as awaiting scoring and low scores in red.">
+      </a>
+      <figcaption>Scores by dealer and quarter.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-score.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-posm-score.jpg" alt="Scoring one item: reference photographs, the written standard and its exceptions, a three-point score, three camera slots and a comment field.">
+      </a>
+      <figcaption>One item: standard, score, evidence.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-posm-fix.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-posm-fix.jpg" alt="Rectification view: the auditor's photographs and written finding, then empty camera slots for the dealer's proof of the fix.">
+      </a>
+      <figcaption>Rectification: the dealer photographs the fix.</figcaption>
+    </figure>
+  </div>
+
+  <p class="muted narrow">
+    An audit is a judgement someone has to defend later, so each item carries the reference
+    photograph and the written standard next to the score, and the score is three points
+    rather than a slider. The rectification screen reuses the same layout with the roles
+    reversed: the auditor's evidence at the top, empty camera slots underneath for the
+    dealer's proof.
+  </p>
+
+  <h3 class="proj-sub">Reporting, on a phone</h3>
+
+  <div class="grid4 grid-even">
+    <figure class="shot">
+      <a href="img/uiux/cad-forecast.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-forecast.jpg" alt="Monthly retail forecast per car model with a total row.">
+      </a>
+      <figcaption>Retail forecast.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-margin.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-margin.jpg" alt="Editable gross margin figures per model, with a save button and an inline note about what the figure excludes.">
+      </a>
+      <figcaption>Margin entry, editing state.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-pricing.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-pricing.jpg" alt="Competitor pricing grouped by brand and series, expanded to show list and transaction prices.">
+      </a>
+      <figcaption>Competitor pricing.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-inv-mobile.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-inv-mobile.jpg" alt="Aged inventory listings filtered by region, trim and age, each row a car with its color and price.">
+      </a>
+      <figcaption>Aged inventory, dealer to dealer.</figcaption>
+    </figure>
+  </div>
+
+  <div class="grid2">
+    <figure class="shot">
+      <a href="img/uiux/cad-inventory.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-inventory.jpg" alt="The aged-inventory module on the web, a table of vehicles with ID, model, trim, color, stock date and price.">
+      </a>
+      <figcaption>The same inventory at head office.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="img/uiux/cad-wireframe.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/cad-wireframe.jpg" alt="Greyscale wireframes: two web page layouts above a row of four phone screens.">
+      </a>
+      <figcaption>Wireframes, before any of the above.</figcaption>
+    </figure>
+  </div>
+</section>
 
 <section class="proj wrap">
   <div class="proj-head">
@@ -96,74 +241,6 @@
         <img src="img/uiux/iot-mockup.jpg" alt="The console shown on a desktop monitor in an office setting.">
       </a>
       <figcaption>In place.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="proj wrap">
-  <div class="proj-head">
-    <p class="proj-kind">Product UI · Mobile</p>
-    <h2>Dealer reporting app</h2>
-    <p class="muted">
-      A phone tool for car dealer staff and regional managers to file and read the numbers
-      that run a dealership: monthly retail forecasts by model, gross margin per vehicle,
-      competitor pricing, aged inventory, and point-of-sale material.
-    </p>
-    <p class="muted">
-      Almost every screen is either a table you read or a table you fill in, on a phone, by
-      someone who does it monthly and does not want to think about it. So the layout stays
-      the same throughout — model on the left, figure on the right, one primary action at
-      the bottom — and the design work went into the states around it: what an empty
-      period looks like, what an editable cell looks like next to a fixed one, and where
-      the warning goes when a number needs a caveat.
-    </p>
-    <div class="tags">
-      <span class="tag">Data entry</span>
-      <span class="tag">iOS</span>
-      <span class="tag">Wireframe to hi-fi</span>
-      <span class="tag">Enterprise</span>
-    </div>
-  </div>
-
-  <div class="grid3 grid-even">
-    <figure class="shot">
-      <a href="img/uiux/cad-forecast.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/cad-forecast.jpg" alt="Phone screen: monthly retail forecast per car model with a total row.">
-      </a>
-      <figcaption>Retail forecast.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="img/uiux/cad-margin.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/cad-margin.jpg" alt="Phone screen: editable gross margin figures per model with a save button and an inline note.">
-      </a>
-      <figcaption>Margin entry, editing state.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="img/uiux/cad-pricing.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/cad-pricing.jpg" alt="Phone screen: competitor pricing grouped by brand and series, expanded.">
-      </a>
-      <figcaption>Competitor pricing.</figcaption>
-    </figure>
-  </div>
-
-  <div class="grid3">
-    <figure class="shot">
-      <a href="img/uiux/cad-wireframe.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/cad-wireframe.jpg" alt="Greyscale wireframe of the app home screen.">
-      </a>
-      <figcaption>Wireframe.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="img/uiux/cad-inventory.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/cad-inventory.jpg" alt="Aged inventory module screens.">
-      </a>
-      <figcaption>Aged inventory.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="img/uiux/cad-posm.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/cad-posm.jpg" alt="Point-of-sale material module screens.">
-      </a>
-      <figcaption>Point-of-sale material.</figcaption>
     </figure>
   </div>
 </section>
@@ -291,39 +368,63 @@
 
 <section class="proj wrap">
   <div class="proj-head">
-    <p class="proj-kind">E-commerce</p>
+    <p class="proj-kind">E-commerce · Three rounds</p>
     <h2>Yulan Home</h2>
     <p class="muted">
       A shop for wallpaper and home furnishing, where nobody arrives knowing the product
-      code they want. So the entry points are rooms — living room, dining room, bedroom,
-      study, nursery, entryway — and designer-curated schemes, with the SKU-level catalogue
-      kept behind a persistent category menu for the people who do know what they came for.
+      code they want. It went through three rounds, and the rounds are the interesting part:
+      the first put two genuinely different answers on the table, and the site that shipped
+      is neither of them.
     </p>
     <div class="tags">
       <span class="tag">Web</span>
       <span class="tag">Retail</span>
+      <span class="tag">Iteration</span>
       <span class="tag">Catalogue structure</span>
     </div>
   </div>
 
-  <div class="grid3">
+  <div class="grid2">
+    <figure class="shot tall">
+      <a href="img/uiux/yulan-r1a.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/yulan-r1a.jpg" alt="First round, conventional direction: photographic promotional hero, room tiles with framed labels, curated packages and designer portraits.">
+      </a>
+      <figcaption><strong>Round one, direction A.</strong> A conventional shop — promotional hero, rooms as tiles, designers as faces.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/yulan-r1b.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/yulan-r1b.jpg" alt="First round, editorial direction: pale paper background, hand-drawn line illustrations of an entryway and a living room, with essay text alongside.">
+      </a>
+      <figcaption><strong>Round one, direction B.</strong> A magazine instead — hand-drawn rooms, essay copy, almost no product.</figcaption>
+    </figure>
+    <figure class="shot tall">
+      <a href="img/uiux/yulan-r2.jpg" target="_blank" rel="noopener">
+        <img src="img/uiux/yulan-r2.jpg" alt="Second round: photographic hero, a four-icon row of service propositions, curated packages, designer customization and dated customer stories.">
+      </a>
+      <figcaption><strong>Round two.</strong> The photography returns, and the service gets stated outright — one-stop, cloud, personalized, themed — with customer stories at the bottom.</figcaption>
+    </figure>
     <figure class="shot tall">
       <a href="img/uiux/yulan-home.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/yulan-home.jpg" alt="Full-length home page: category menu, promotional banner, room-based browsing tiles and designer recommendations.">
+        <img src="img/uiux/yulan-home.jpg" alt="Final round: green Yulan Home identity, a persistent category menu overlapping the hero, room tiles, designer recommendations and style features.">
       </a>
-      <figcaption>Home page.</figcaption>
+      <figcaption><strong>Final.</strong> The green identity arrives, and a permanent category menu sits over the hero for people who do know what they came for.</figcaption>
     </figure>
-    <figure class="shot tall">
-      <a href="img/uiux/yulan-b.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/yulan-b.jpg" alt="Full-length inner page from the same site.">
-      </a>
-      <figcaption>Inner page.</figcaption>
-    </figure>
+  </div>
+
+  <p class="muted narrow">
+    What survives all three rounds is the room-based entry — living room, dining room,
+    bedroom, study, nursery, entryway — because it is the only way in that matches how
+    someone actually shops for wallpaper. What changes is how much the page argues: the
+    illustrated round barely sells, the second round sells explicitly, and the final one
+    puts the catalogue back within one click while keeping the rooms.
+  </p>
+
+  <div class="grid2">
     <figure class="shot tall">
       <a href="img/uiux/yulan-c.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/yulan-c.jpg" alt="Full-length inner page from the same site.">
+        <img src="img/uiux/yulan-c.jpg" alt="An inner page from the final round.">
       </a>
-      <figcaption>Inner page.</figcaption>
+      <figcaption>An inner page from the final round.</figcaption>
     </figure>
   </div>
 </section>
@@ -399,23 +500,17 @@
     <p class="proj-kind">Print &amp; campaign</p>
     <h2>Posters and product graphics</h2>
     <p class="muted">
-      Campaign posters for a summer program run across two years, a product presentation
-      board, and product marketing graphics.
+      A campaign poster for a summer program, a product presentation board, and product
+      marketing graphics.
     </p>
   </div>
 
-  <div class="grid4 grid-even">
+  <div class="grid3 grid-even">
     <figure class="shot">
       <a href="img/uiux/poster-camp-2015.jpg" target="_blank" rel="noopener">
         <img src="img/uiux/poster-camp-2015.jpg" alt="Summer camp poster: flat night-time illustration of a tent and cabin under a moon.">
       </a>
-      <figcaption>Summer camp, 2015.</figcaption>
-    </figure>
-    <figure class="shot">
-      <a href="img/uiux/poster-camp-2016.jpg" target="_blank" rel="noopener">
-        <img src="img/uiux/poster-camp-2016.jpg" alt="Summer camp poster: flat illustration of a winding path through green hills to tents.">
-      </a>
-      <figcaption>Summer camp, 2016.</figcaption>
+      <figcaption>Summer camp poster.</figcaption>
     </figure>
     <figure class="shot">
       <a href="img/uiux/poster-raindoms.jpg" target="_blank" rel="noopener">

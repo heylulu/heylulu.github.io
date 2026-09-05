@@ -285,3 +285,9 @@ video { width: 100%; height: auto; display: block; border-radius: 8px; backgroun
 .marks figure { margin: 0; }
 .marks img { background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 1.4rem;
   height: clamp(150px, 18vw, 210px); width: 100%; object-fit: contain; }
+
+.proj-sub {
+  margin: 2.8rem 0 -0.6rem; font-size: 0.98rem; font-weight: 600;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+.proj .narrow { margin-top: -0.8rem; }
