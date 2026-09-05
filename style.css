@@ -287,7 +287,53 @@ video { width: 100%; height: auto; display: block; border-radius: 8px; backgroun
   height: clamp(150px, 18vw, 210px); width: 100%; object-fit: contain; }
 
 .proj-sub {
-  margin: 2.8rem 0 -0.6rem; font-size: 0.98rem; font-weight: 600;
+  margin: 3rem 0 0.9rem; font-size: 1rem; font-weight: 650;
   color: var(--ink); letter-spacing: -0.01em;
 }
-.proj .narrow { margin-top: -0.8rem; }
+.proj-sub + * { margin-top: 0.9rem; }
+.proj .narrow { max-width: 660px; }
+.proj .narrow + .grid2, .proj .narrow + .grid3, .proj .narrow + .grid4,
+.proj .narrow + .shot { margin-top: 2rem; }
+
+/* ---------- lightbox ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(14, 13, 10, 0.92);
+  display: none; align-items: center; justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+/* the [hidden] attribute is what toggles it; never let display win over it */
+.lightbox:not([hidden]) { display: flex; }
+.lb-stage { margin: 0; max-width: 100%; }
+.lb-img {
+  max-width: min(1400px, 100%);
+  margin: 0 auto;
+  border-radius: 6px;
+  background: #fff;
+}
+.lb-cap {
+  margin-top: 0.9rem; text-align: center;
+  color: rgba(255, 255, 255, 0.72); font-size: 0.88rem; line-height: 1.5;
+}
+.lb-close, .lb-nav {
+  position: fixed; z-index: 2;
+  background: rgba(255, 255, 255, 0.1); color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 999px;
+  cursor: pointer; font-family: inherit; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s ease;
+}
+.lb-close:hover, .lb-nav:hover { background: rgba(255, 255, 255, 0.24); }
+.lb-close:focus-visible, .lb-nav:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lb-close { top: 1rem; right: 1rem; width: 2.6rem; height: 2.6rem; font-size: 1.6rem; padding-bottom: 0.15em; }
+.lb-nav { top: 50%; transform: translateY(-50%); width: 2.8rem; height: 2.8rem; font-size: 1.7rem; padding-bottom: 0.12em; }
+.lb-prev { left: 1rem; }
+.lb-next { right: 1rem; }
+@media (max-width: 640px) {
+  .lb-nav { top: auto; bottom: 1rem; transform: none; }
+}
+
+/* cursor hint on the plates that open it */
+.shot > a { cursor: zoom-in; }
