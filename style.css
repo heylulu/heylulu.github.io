@@ -261,7 +261,7 @@ video { width: 100%; height: auto; display: block; border-radius: 8px; backgroun
   border: 1px solid var(--rule); border-radius: 10px; background: #fff;
 }
 .shot > a:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--rule)); text-decoration: none; }
-.shot.tall > a { max-height: 480px; }
+.shot.tall > a { height: 480px; }   /* fixed, not max — keeps captions aligned across a row */
 .shot.tall > a::after {
   content: ""; position: absolute; inset: auto 0 0 0; height: 88px;
   background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
