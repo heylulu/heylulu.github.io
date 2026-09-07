@@ -299,14 +299,18 @@ video { width: 100%; height: auto; display: block; border-radius: 8px; backgroun
 .lightbox {
   position: fixed; inset: 0; z-index: 100;
   background: rgba(14, 13, 10, 0.92);
-  display: none; align-items: center; justify-content: center;
+  /* flex-start + auto margins on the stage, NOT align-items:center: a centred flex item
+     taller than its container overflows in both directions and its top can never be
+     scrolled to. Full-length page shots are several thousand pixels tall. */
+  display: none; align-items: flex-start; justify-content: center;
   padding: clamp(1rem, 4vw, 3rem);
   overflow: auto;
   overscroll-behavior: contain;
 }
 /* the [hidden] attribute is what toggles it; never let display win over it */
 .lightbox:not([hidden]) { display: flex; }
-.lb-stage { margin: 0; max-width: 100%; }
+/* auto margins centre the stage when it fits and resolve to zero when it overflows */
+.lb-stage { margin: auto; max-width: 100%; }
 .lb-img {
   max-width: min(1400px, 100%);
   margin: 0 auto;

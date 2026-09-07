@@ -12,10 +12,10 @@ This decides your URL, so pick before you create it.
 
 | Repo name | Site URL |
 |---|---|
-| `luliu.github.io` (your username, exactly) | `https://luliu.github.io/` |
-| anything else, e.g. `portfolio` | `https://luliu.github.io/portfolio/` |
+| `heylulu.github.io` (your username, exactly) | `https://heylulu.github.io/` |
+| anything else, e.g. `portfolio` | `https://heylulu.github.io/portfolio/` |
 
-The first is a **user site** and gives you the clean root URL. Use that one — you only get one per account, and a portfolio is what it's for. Replace `luliu` with whatever username you register.
+The first is a **user site** and gives you the clean root URL. Use that one — you only get one per account, and a portfolio is what it's for. Yours is `heylulu`, so the site is at `https://heylulu.github.io/`.
 
 Either works with these files: every link in the site is relative, so nothing breaks at a subpath.
 
@@ -59,43 +59,33 @@ For a user site named `<username>.github.io`, this is often already on by defaul
 
 ---
 
-## Step 4 — Point your custom domain at it
+## Step 4 — Stay on the github.io domain
 
-Once you've registered the domain.
+The site lives at **https://heylulu.github.io/** and there is **no custom domain**. Do not set
+one in Settings → Pages, and do not add a `CNAME` file to the repo. Both do the same thing, and
+the consequences below are why this is worth leaving alone.
 
-**In GitHub:** Settings → Pages → **Custom domain** → type `luliu.design` (or whichever) → **Save**. This writes a `CNAME` file into your repo automatically.
+**What happens if a custom domain is set.** GitHub immediately starts serving a permanent
+redirect (HTTP 301) from `heylulu.github.io` to that domain. If the domain's DNS is not
+already pointing at GitHub — which it will not be until records propagate, or ever, if the
+domain was never registered — every page of the site becomes unreachable.
 
-**At your registrar,** add DNS records. Values confirmed against GitHub's documentation:
+**Why removing it does not fix it straight away.** A 301 is a *permanent* redirect, and
+browsers cache it on disk, per-site, for a long time. So after the custom domain is removed and
+Pages is serving `heylulu.github.io` correctly again, your own browser can keep redirecting you
+to the dead domain, while the site works perfectly for everyone else. Every link looks broken,
+and a normal reload does not help because the browser never asks the server.
 
-For the apex domain (`luliu.design`), four **A** records, all with host `@`:
+**How to clear it, if this has already happened:**
 
-```
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-```
-
-Optionally add four **AAAA** records for IPv6, same host:
-
-```
-2606:50c0:8000::153
-2606:50c0:8001::153
-2606:50c0:8002::153
-2606:50c0:8003::153
-```
-
-For `www`, one **CNAME** record with host `www` pointing to `<username>.github.io` — your username, no repository name, with the trailing dot if your registrar wants one.
-
-**Then wait.** DNS usually resolves within an hour. GitHub issues the HTTPS certificate automatically once it does; when the **Enforce HTTPS** checkbox on the Pages settings page becomes clickable, tick it. That can take up to 24 hours, occasionally longer. The site works over plain HTTP in the meantime, but do not put the URL anywhere until HTTPS is live — a browser warning on a portfolio link is worse than no link.
-
----
-
-## The gotcha that will bite you
-
-Setting a custom domain creates a `CNAME` file **in the repo, not on your Mac**. If you later re-upload the whole folder through the web interface, that file disappears and your domain stops working.
-
-Fix it once, now: after Step 4, create a plain text file called `CNAME` (no extension) in your local `site` folder containing exactly one line — your domain, e.g. `luliu.design` — and keep it there. Then every future upload carries it along.
+- Quickest check: open the site in a **private / incognito window**, which has no cached
+  redirect. If it works there, the site is fine and only your normal browser is stale.
+- Chrome: open `chrome://net-internals/#hsts`, put `heylulu.github.io` in **Delete domain
+  security policies** and delete it; then clear cached images and files for the last hour.
+- Safari: Develop → **Empty Caches**, or Settings → Privacy → Manage Website Data → remove
+  `github.io`.
+- Firefox: Settings → Privacy & Security → Cookies and Site Data → **Manage Data** → remove
+  `github.io`.
 
 ---
 
@@ -123,4 +113,6 @@ Changes go live in about a minute. If you don't see them, hard-reload with **Cmd
 
 **404 on the whole site.** Either Pages isn't enabled yet, `index.html` is one level too deep, or the first build hasn't finished. Check the **Actions** tab for a failed deployment.
 
-**Custom domain shows someone else's site or an error.** DNS hasn't propagated. Give it an hour before changing anything — repeatedly editing records restarts the clock.
+**Every link suddenly goes nowhere, for you but not for others.** A custom domain was set on
+Pages at some point and your browser cached the 301 redirect. See Step 4 for how to clear it.
+Check first in a private window.
